@@ -1,0 +1,85 @@
+@import "./_mixin";
+@import "./variables";
+@import "./animation";
+@import "./preloader";
+
+.root {
+	min-height: 100vh;
+	@include flexbox(center, center);
+	padding: 0 1.5rem;
+	@include animation(scaleLoading, 1s, 0s);
+	.main-content {
+		display: flex;
+		align-items: center;
+		gap: 4rem;
+		@media screen and (max-width: 768px) {
+			flex-direction: column;
+		}
+		.content-left {
+			max-width: 65rem;
+			width: 100%;
+			h1 {
+				@include handwriting_font;
+				@include animation(slideBottom, 0.7s, 0s);
+				font-size: 4rem;
+				padding-bottom: 0.8rem;
+				@media screen and (max-width: 768px) {
+					font-size: 3.4rem;
+				}
+				@media screen and (max-width: 576px) {
+					font-size: 3rem;
+					line-height: 1.5;
+				}
+				span {
+					color: $primary;
+				}
+			}
+			.quote,
+			.my-wish {
+				line-height: 1.4;
+				opacity: 0;
+				@include translate(0, 100%);
+				@include animation(slideBottom, 0.5s, 0.3s);
+				span {
+					color: $primary;
+				}
+			}
+			.quote {
+				font-style: italic;
+			}
+			.my-wish {
+				padding-top: 1rem;
+				@include animation(slideBottom, 0.5s, 0.6s);
+			}
+		}
+		.content-right {
+			width: 30rem;
+			height: 35rem;
+			margin: 0 auto;
+			position: relative;
+			@include animation(slideRight, 0.7s, 0s);
+			@media screen and (max-width: 768px) {
+				@include animation(slideBottom, 0.7s, 0s);
+			}
+			.woman-image {
+				position: absolute;
+				inset: 0;
+				@include transitions(0.5s);
+				img {
+					object-fit: contain;
+				}
+				&:nth-child(1) {
+					opacity: 0;
+					@include scale(0, 0);
+				}
+				&:nth-child(2) {
+					opacity: 1;
+					@include scale(1, 1);
+				}
+				&:nth-child(n + 3) {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}

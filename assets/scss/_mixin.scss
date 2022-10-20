@@ -1,0 +1,47 @@
+.hide {
+	display: none !important;
+}
+
+@mixin transitions($duration) {
+	transition: all $duration ease-in-out;
+	-webkit-transition: all $duration ease-in-out;
+	-moz-transition: all $duration ease-in-out;
+	-o-transition: all $duration ease-in-out;
+}
+
+@mixin handwriting_font {
+	font-family: "Kalam", cursive;
+}
+@mixin font-bold {
+	font-weight: 600;
+}
+@mixin font-medium {
+	font-weight: 500;
+}
+@mixin font-normal {
+	font-weight: 400;
+}
+
+@mixin animation($name, $duration, $delay) {
+	animation: $name $duration linear $delay 1 forwards;
+	-webkit-animation: $name $duration linear $delay 1 forwards;
+}
+
+@mixin flexbox($align-option, $justify-option) {
+	display: flex;
+	align-items: $align-option;
+	justify-content: $justify-option;
+}
+
+@mixin translate($x, $y) {
+	transform: translate($x, $y);
+	-webkit-transform: translate(($x, $y));
+	-moz-transform: translate($x, $y);
+	-o-transform: translate($x, $y);
+}
+@mixin scale($x, $y) {
+	transform: scale($x, $y);
+	-webkit-transform: scale($x, $y);
+	-moz-transform: scale($x, $y);
+	-o-transform: scale($x, $y);
+}

@@ -1,0 +1,12 @@
+.preloader {
+	height: 100vh;
+	@include flexbox(center, center);
+	@include transitions(0.4s);
+	.preload-image {
+		width: 25rem;
+		height: 30rem;
+		img {
+			object-fit: contain;
+		}
+	}
+}
