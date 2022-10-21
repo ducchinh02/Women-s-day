@@ -64,6 +64,7 @@
 			.woman-image {
 				position: absolute;
 				inset: 0;
+				@include scale(0, 0);
 				@include transitions(0.5s);
 				img {
 					object-fit: contain;
