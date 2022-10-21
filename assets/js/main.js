@@ -14,6 +14,8 @@ const preloadImg = document.querySelector(".preloader .preload-image img");
 const root = document.querySelector(".root");
 const slideImage = root.querySelector(".slide-image");
 
+const shuffleImages = [...images].sort(() => Math.floor(Math.random() - 0.5));
+
 const setRandomImages = (imageSrc) => {
 	preloadImg.src = imageSrc;
 };
@@ -28,7 +30,6 @@ slideImage.innerHTML = images
 	.join("");
 
 let getRandomImages = setInterval(() => {
-	const shuffleImages = images.sort(() => Math.floor(Math.random() - 0.5));
 	let randomIndex = Math.floor(Math.random() * shuffleImages.length);
 	setRandomImages(shuffleImages[randomIndex]);
 }, 100);
@@ -38,6 +39,7 @@ window.addEventListener("load", () => {
 	setTimeout(() => {
 		preloader.remove();
 		root.classList.remove("hide");
+		clearInterval(getRandomImages);
 	}, 200);
 	setInterval(() => {
 		const slideItems = slideImage.querySelectorAll(".woman-image");
