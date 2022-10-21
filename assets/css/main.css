@@ -114,6 +114,11 @@ body {
   max-width: 65rem;
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .root .main-content .content-left {
+    text-align: center;
+  }
+}
 .root .main-content .content-left h1 {
   font-family: "Kalam", cursive;
   animation: slideBottom 0.7s linear 0s 1 forwards;

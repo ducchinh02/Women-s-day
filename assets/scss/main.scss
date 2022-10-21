@@ -18,6 +18,9 @@
 		.content-left {
 			max-width: 65rem;
 			width: 100%;
+			@media screen and (max-width: 768px) {
+				text-align: center;
+			}
 			h1 {
 				@include handwriting_font;
 				@include animation(slideBottom, 0.7s, 0s);
